@@ -75,6 +75,7 @@
     <div>
       <div>
         <button type="reset">Reset</button>
+             <button type="button" @click="preview">Preview</button>
         <button  type="submit">Submit</button>
       </div>
     </div>
@@ -100,6 +101,18 @@ export default {
 
     onReset () {
       this.$emit('onReset')
+    },
+
+    preview () {
+      alert(`
+        Brand: ${this.car.brand}
+        Model: ${this.car.model}
+        Year: ${this.car.year}
+        Maximum Speed: ${this.car.maxSpeed}
+        Number of Doors: ${this.car.numberOfDoors}
+        Engine: ${this.car.model}
+        ${this.car.isAutomatic ? 'Automatic' : 'Manual'}
+      `)
     }
   }
 }
