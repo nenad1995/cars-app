@@ -3,13 +3,13 @@
     <div>
       <label>Brand</label> 
       <div>
-        <input type="text" required="required" v-model="car.brand">
+        <input type="text" required="required" minlength="2" v-model="car.brand">
       </div>
     </div>
     <div>
       <label>Model</label> 
       <div>
-        <input type="text" v-model="car.model">
+        <input type="text" required="required" minlength="2" v-model="car.model">
       </div>
     </div>
     <div>
@@ -23,7 +23,7 @@
     <div>
       <label>Maximum Speed</label> 
       <div>
-        <input type="number" required="required" v-model="car.maxSpeed">
+        <input type="number" v-model="car.maxSpeed">
       </div>
     </div>
     <div>
