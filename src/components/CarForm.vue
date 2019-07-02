@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form @submit.prevent="onSubmit" @reset="onReset">
     <div>
       <label>Brand</label> 
       <div>
@@ -14,7 +14,7 @@
     </div>
     <div>
       <label>Year</label> 
-      <div class="col-8">
+      <div>
         <select required="required" v-model="car.year">
           <option v-for="year in years" :value="year" :key="year">{{ year }}</option>
         </select>
@@ -74,6 +74,7 @@
     </div> 
     <div>
       <div>
+        <button type="reset">Reset</button>
         <button  type="submit">Submit</button>
       </div>
     </div>
@@ -85,15 +86,20 @@ export default {
   props: {
     car: Object
   },
+  
   data () {
     return {
-      years: Array(29).fill(1990).map((n, i) => n + i)
+      years: Array(30).fill(1990).map((n, i) => n + i)
     }
   },
-  
+
   methods: {
     onSubmit () {
       this.$emit('onSubmit')
+    },
+
+    onReset () {
+      this.$emit('onReset')
     }
   }
 }
