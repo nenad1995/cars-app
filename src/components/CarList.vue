@@ -12,6 +12,9 @@
         <li>{{ car.isAutomatic ? 'Automatic' : 'Manual' }}</li>
         <li>Engine: {{ car.engine }}</li>
       </ul>
+      <div>
+        <router-link :to="{ name: 'edit', params: { id: car.id } }">Edit</router-link>
+      </div>
     </div>
   </div>
 </template>
