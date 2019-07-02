@@ -10,6 +10,9 @@
             Cars
           </router-link>
         </li>
+        <li>
+          <router-link :to="{ name: 'add' }">Add Car</router-link>
+        </li>
       </ul>
     </div>
   </nav>
@@ -17,6 +20,6 @@
 
 <script>
 export default {
-  
+
 }
 </script>

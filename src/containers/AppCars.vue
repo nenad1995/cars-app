@@ -23,7 +23,6 @@ export default {
     cars.getAll()
       .then((response) => {
         next((vm) => {
-          console.log(response)
           vm.cars = response.data
         })
       }).catch((error) => {
