@@ -14,6 +14,7 @@
       </ul>
       <div>
         <router-link :to="{ name: 'edit', params: { id: car.id } }">Edit</router-link>
+        <button @click="onDelete(car)">Delete</button>
       </div>
     </div>
   </div>
@@ -23,6 +24,12 @@
 export default {
   props: {
     cars: Array
+  },
+
+  methods: {
+    onDelete (car) {
+      this.$emit('onDelete', car)
+    }
   }
 }
 </script>

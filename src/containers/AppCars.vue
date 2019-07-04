@@ -1,6 +1,6 @@
 <template>
   <div>
-    <car-list :cars="cars"></car-list>
+    <car-list :cars="cars" @onDelete="deleteCar">></car-list>
   </div>
 </template>
 
@@ -28,6 +28,15 @@ export default {
       }).catch((error) => {
         console.log(error)
       })
+  },
+
+  methods: {
+    deleteCar (car) {
+      cars.remove(car.id)
+        .then((success) => {
+          this.cars = this.cars.filter(c => c !== car)
+        })
+    }
   }
 }
 </script>
